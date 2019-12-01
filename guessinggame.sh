@@ -5,10 +5,15 @@ echo "Welcome to Coursera.org Unix Workbench game!"
 
 answer=0
 numfiles=$(ls | wc -w)
-while [[ $answer -ne $numfiles ]]
-do
+
+function guess {
 	echo -n "Plaease answer, how many files are in the current directory ? :"
 	read answer
+}
+
+while [[ $answer -ne $numfiles ]]
+do
+	guess
 	if [[ $answer -eq $numfiles ]]
 	then
 		echo "Congrats to You! Your guess has been correct!"
